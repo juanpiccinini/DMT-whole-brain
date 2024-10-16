@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 
 def kinetic(scale, alpha, beta, t):
@@ -13,13 +14,12 @@ def kinetic(scale, alpha, beta, t):
 
 
 
-
 best_df = pd.read_csv(r"simulated_data.csv")
-dmt_matrix = np.load(r"DMT_matrix.npy")
-pcb_matrix = np.load(r"PCB_matrix.npy")
 
 save_location = r"D:\Juan\Facultad\Doctorado\Submmiting\code"
 
+dmt_matrix = np.load(save_location + os.sep + r"DMT_matrix.npy")
+pcb_matrix = np.load(save_location + os.sep + r"PCB_matrix.npy")
 
 scale_all = np.arange(0, 225, 5)
 beta_all = np.arange(20, 920, 20)
